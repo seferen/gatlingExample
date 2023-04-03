@@ -1,0 +1,6 @@
+env:
+  startUsersPerSec: 0.0
+  usersPerSec: 126
+  testDuration: 36000
+  loadSteps: 1
+  test: Stable

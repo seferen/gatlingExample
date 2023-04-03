@@ -1,0 +1,6 @@
+env:
+  startUsersPerSec: 0.0
+  usersPerSec: 5
+  testDuration: 300
+  loadSteps: 20
+  test: Debug

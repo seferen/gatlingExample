@@ -1,0 +1,15 @@
+.idea
+target
+.bsp
+*.csv
+*.zip
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# Ignore VS code files
+.vscode
+bin
+**/.DS_Store

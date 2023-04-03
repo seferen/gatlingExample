@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ .Chart.Name }}"
+  labels:
+    app.kubernetes.io/name: "{{ .Chart.Name }}"
+    project: "{{ .Chart.Name }}"
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: "{{ .Chart.Name }}"
+    spec:
+      containers:
+        - name: "{{ .Chart.Name }}"
+          image: "{{ .Values.image_path }}{{ .Chart.Name }}:{{ .Values.image_tag }}"
+          env:
+{{- range $key, $val := .Values.env }}
+            - name: "{{ $key }}"
+              value: "{{ $val }}"
+{{- end }}
+      restartPolicy: Never
+      tolerations:
+{{ .Values.tolerations | toYaml | indent 8 }}

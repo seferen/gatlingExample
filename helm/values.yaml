@@ -1,0 +1,26 @@
+image_path: "artifactory.raiffeisen.ru/rbp-docker/app/branch/"
+image_tag: "latest"
+k8s_state: present
+
+k8s:
+  replicas: 1
+  requests:
+    memory: "350Mi"
+  limits:
+    memory: "2000Mi"
+
+env:
+  serviceUrl: http://localhost:8080
+  authUrl: http://localhost:30351
+  authRedirectionUrl: http://localhost:30350
+  startUsersPerSec: 0.0
+  usersPerSec: 5
+  testDuration: 300
+  loadSteps: 20
+  test: Debug
+
+tolerations:
+  - key: "<key>"
+    value: "<value>"
+    operator: "Equal"
+    effect: "NoSchedule"

@@ -1,0 +1,19 @@
+---
+include:
+  - project: "RBP/load"
+    file:
+      - "/cicd/pipeline/build-gradle.yml"
+      - "/cicd/pipeline/stages.yml"
+      - "/cicd/pipeline/tests.helm.yml"
+
+Debug:
+  extends:
+    - .test
+
+Load:
+  extends:
+    - .test
+
+Stable:
+  extends:
+    - .test
